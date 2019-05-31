@@ -31,8 +31,10 @@ class MainActivity : AppCompatActivity() {
         viewModel.getAll().observe(this, Observer {
             adapter.updateList(it)
         })
+
+        // se descomento la linea 37
         btn_repo.setOnClickListener {
-            //viewModel.retrieveRepo(et_repo.text.toString())
+            viewModel.retrieveRepo(et_repo.text.toString())
         }
     }
 
